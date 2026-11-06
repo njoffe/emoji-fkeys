@@ -44,8 +44,19 @@ Keep `emoji-fkeys.ahk` where it is after you do this. If you move or rename it, 
 ### Change the emojis
 
 1. Right-click `emoji-fkeys.ahk` and choose **Open with → Notepad**.
-2. Replace any emoji between the quotes, and save.
-3. Right-click the green **H** tray icon and choose **Reload Script**.
+2. Find the line for the key you want to change. For example, to change F1:
+   ```
+   F1:: SendText "😂"
+   ```
+3. Select the emoji between the quotes and delete it. Keep the quotes.
+4. Press **Win + .** (Windows key and full stop) to open the emoji picker, and click the emoji you want. It's inserted between the quotes:
+   ```
+   F1:: SendText "🥳"
+   ```
+5. Save with **Ctrl+S**. Notepad saves as UTF-8, which keeps emojis intact. If you use **Save As**, make sure **Encoding** says **UTF-8**, or the emojis may turn into question marks.
+6. Right-click the green **H** tray icon and choose **Reload Script**. Press the key to check.
+
+If you made a Startup shortcut, edit the original `emoji-fkeys.ahk` file, not the shortcut.
 
 ### Uninstall
 
@@ -69,7 +80,20 @@ Keep `emoji-fkeys.ahk` where it is after you do this. If you move or rename it, 
 
 ### Change the emojis
 
-Edit the emojis in your Hammerspoon config (**Open Config**), save it, and choose **Reload Config**.
+1. Click the hammer icon in the menu bar and choose **Open Config**.
+2. Find the key you want to change in the list near the top. For example, to change F1:
+   ```lua
+   f1 = "😂",
+   ```
+3. Select the emoji between the quotes and delete it. Keep the quotes and the comma.
+4. Press **Ctrl + Cmd + Space** to open the emoji picker, and click the emoji you want:
+   ```lua
+   f1 = "🥳",
+   ```
+5. Save with **Cmd+S**.
+6. Click the hammer icon and choose **Reload Config**. Press the key to check.
+
+If Hammerspoon shows an error after reloading, check that every emoji still has a quote on each side and a comma after it.
 
 ### Uninstall
 
