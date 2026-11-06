@@ -29,11 +29,17 @@ Only a bare F-key types an emoji. Combinations such as Alt+F4 or Ctrl+F5 keep wo
 3. Double-click `emoji-fkeys.ahk`. A green **H** icon appears in the system tray (bottom-right; you may need to click the **^** arrow).
 4. Open Notepad and press **F1** to check that 😂 appears.
 
-**Start it automatically with Windows (optional):**
+### Keep it running after a restart
 
-1. Press **Win+R**, type `shell:startup` and press Enter.
+The script stops when you shut down or restart your PC, and it won't start again on its own until you add it to Windows' Startup folder:
+
+1. Press **Win+R**, type `shell:startup` and press Enter. A folder opens (it's usually empty).
 2. Right-click `emoji-fkeys.ahk` and choose **Show more options → Create shortcut**.
-3. Move the shortcut into the Startup folder that opened.
+3. Drag the new **emoji-fkeys - Shortcut** into the Startup folder.
+
+From the next restart, the script starts by itself when you sign in. To check, look for the green **H** in the system tray.
+
+Keep `emoji-fkeys.ahk` where it is after you do this. If you move or rename it, the shortcut stops working; delete the old shortcut and make a new one.
 
 ### Change the emojis
 
@@ -76,6 +82,7 @@ Edit the emojis in your Hammerspoon config (**Open Config**), save it, and choos
 
 ## Troubleshooting
 
+- **It stopped working after a restart.** The script hasn't been added to Startup. Double-click `emoji-fkeys.ahk` to start it now, then follow [Keep it running after a restart](#keep-it-running-after-a-restart). On a Mac, tick **Launch Hammerspoon at login** in Hammerspoon's Preferences.
 - **Pressing F1 changes the volume or brightness instead.** Laptops and many keyboards put media controls on the F-keys. Hold **Fn** while you press the key, or turn on Fn Lock (often **Fn+Esc**).
 - **Microsoft Natural and Ergonomic keyboards:** turn **F Lock** on (the key to the right of F12; its light should be lit). On the Sculpt Ergonomic Keyboard, slide the switch at the top right to the F-key side. When F Lock is off, the F-keys send shortcuts such as Undo and Save instead of F1–F12. F Lock may switch itself off after a restart.
 - **Nothing happens in one particular app.** Programs running as administrator ignore keystrokes from a script that isn't. Some games block simulated typing altogether.
